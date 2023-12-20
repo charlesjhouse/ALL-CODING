@@ -1,0 +1,46 @@
+.title {
+  font-family: Arial;
+  font-size: 40px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+input {
+  display:block;
+  width: 400px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  background-color: rgb(241, 241, 241);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.destination-search {
+  margin-bottom: 35px;
+}
+
+.request-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px; 
+  padding-right: 20px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.later-button {
+  background-color: rgb(241, 241, 241);
+  border:none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px; 
+  padding-right: 20px;
+  font-size: 16px;
+}

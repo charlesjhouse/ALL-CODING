@@ -1,0 +1,7 @@
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.div {
+  background-color: lightpink;
+}

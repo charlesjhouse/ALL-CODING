@@ -1,0 +1,27 @@
+p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-family: roboto;
+  font-size: 16px;
+  color: rgb(144, 144, 144);
+}
+
+.div {
+  background-color: rgb(26, 26, 26);
+  color: white;
+  width: 360px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

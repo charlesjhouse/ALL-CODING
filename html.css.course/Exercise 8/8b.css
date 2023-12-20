@@ -1,0 +1,11 @@
+.para {
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.no-button,
+.yes-button {
+  display: inline-block;
+  vertical-align: middle;
+}

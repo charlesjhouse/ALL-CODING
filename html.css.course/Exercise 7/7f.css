@@ -1,0 +1,38 @@
+p {
+  font-family: Arial;
+  color: rgb(100, 100, 100);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.instruction {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.input {
+  font-size: 16px;
+  border-color: rgb(100, 100, 100);
+  border-style: solid;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 400px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.check {
+  font-size: 16.4px;
+  margin-bottom: 20px;
+}
+
+.button {
+  font-size: 20px;
+  background-color: rgb(10, 102, 194);
+  color: white;
+  border: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 400px;
+  border-radius: 32px;
+}

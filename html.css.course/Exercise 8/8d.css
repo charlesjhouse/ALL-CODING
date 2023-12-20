@@ -1,0 +1,38 @@
+.first-name,
+.last-name {
+width: 100px;
+border-width: 1px;
+border-style: solid;
+border-color: rgb(200, 200, 200);
+padding-left: 10px;
+padding-top: 7px;
+padding-bottom: 7px;
+font-size: 13px;
+border-radius: 7px;
+margin-bottom: 10px;
+}
+
+.email {
+  font-size: 13px;
+  width: 219px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  display: block;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.sign-up-button {
+  width: 233px;
+  background-color: rgb(47, 127, 231);
+  color: white;
+  border:none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  font-weight: bold; font-size: 14px;
+}

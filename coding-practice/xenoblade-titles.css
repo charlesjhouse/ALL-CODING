@@ -37,6 +37,7 @@ body {
 
 .zoom-container {
   width: 100%;
+  transition: transform 0.3s;
 }
 
 .xenoblade-container:hover .zoom-container {

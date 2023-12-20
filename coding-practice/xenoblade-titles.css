@@ -1,7 +1,8 @@
 body {
   padding-top: 105px;
   margin: 0;
-  height: 2000px;
+  /* height: 2000px; */
+  margin-bottom: 200px;
 }
 
 .header {
@@ -32,7 +33,7 @@ body {
   position: relative;
   transition: transform 0.3s;
   overflow: hidden;
-  max-height: 300px;
+  max-height: 250px;
 }
 
 .zoom-container {
@@ -81,4 +82,9 @@ body {
 
 .xenoblade-container:hover .thumbnail-overlay {
   opacity: 1;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

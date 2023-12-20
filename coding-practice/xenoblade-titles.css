@@ -32,14 +32,11 @@ body {
   position: relative;
   transition: transform 0.3s;
   overflow: hidden;
-  /* border: 1px solid red; */
-  /* background-color: #fff; */  
   max-height: 300px;
 
 }
 
 .zoom-container {
-  /* border: 1px solid blue; */
   width: 100%;
 }
 

@@ -29,7 +29,7 @@ body {
 }
 
 .xenoblade-container {
-  display: flex;
+  /* display: flex; */
   position: relative;
   transition: transform 0.3s;
   overflow: hidden;
@@ -87,4 +87,19 @@ body {
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.xenoblade-content {
+  float: right;
+  margin: 20px;
+  text-align: right;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: margin 0.3s ease, opacity 0.3s ease;
+  max-width: 400px;
+  opacity: 0;
+}
+
+.xenoblade-container:hover .xenoblade-content {
+  margin-right: 60px;
+  opacity: 1;
 }

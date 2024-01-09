@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+
+    <button onclick ="
+      subscribe ();
+    " class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+<!-- The input element doesn't have a closing tag, and is called a VOID ELEMENT -->
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+      handleCostKeydown(event);
+    ">
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+<!-- The button with onclick by itself doesn't have the feature of being triggered just by the Enter key. There is another attribute that RUNS JAVASCRIPT WHEN PRESSING A KEY DOWN. It is called, "onkeydown="...". We add this to the input itself this time. That has been cleaned up by being rewritten into the script tag in a new function.-->
+
+<!-- Clicks and keydowns are known as EVENTS
+onlick attribute and onkeydown attribute are known as EVENT LISTENERS 
+Every event listener gets an "event" object, which is a special object given to listeners like onkeydown and onclick. If we console.log(event), it will show us details about the event, or click/key pressed, such as which one was pressed. This is important if we want to trigger something with a specific key-->
+
+    <p class="js-total-cost"></p>
+
+    <script>
+                           //EXTRA INFO
+      String(25) // this is how we turn something into a string
+      console.log('25' -5); //if a string ONLY contains a number, and we subtract, divide or multiply it, it will be converted into a number automatically. Automatic type conversion is called Type Coercion.
+      console.log('25' +5); //but it doesn't work for adding. So the common practice is, Don't do math with strings, only numbers.
+
+//The document object represents the webpage. BUT the window object represents the browser. What's in the browser? the webpage, therefore the document object. Therefore, also the console object. Also popups.
+      //window.document
+      //window.console.log('window');
+      //window.alert
+//not writing the window is a built in shortcut, as it is used everywhere, JavaScript adds it for us automatically.
+
+                       //PROJECT STARTS HERE
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+//(These notes are out of order) We want the click of the calculate button to run a calculation based on the input, so we made a function for it down here. I've forgotten most knowledge of functions and how they're written and used, need to revise. HOWEVER, we definitely need access to the information in the input element for this function to work, so the first thing we do is add document.querySelector('.class name of input here') to get it. To confirm it works we can console.log it. HOWEVER, to save the input variable we turn it into a variable with const.
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+//now we need to get the text from the input box, but it doesn't HAVE any text, it has no HTML within it. So what now? We use the property ".value". inputElement.value accesses the text/value of the box. We want access to that value elsewhere too, so we save it in a variable.
+        let cost = Number(inputElement.value); //if we're following the steps we need to accomplish the calculation, the next step is to check if the cost is under $40 to add $10.
+//        console.log(cost);
+//        console.log(typeof cost); // the cost is actually a string, and therefore the computer doesn't do math with it, it simply adds 10 to the end of the value input. Getting a value from the DOM like the variable cost does, it becomes a string. To fix this and make it a number, we manually make it a number using the built in function called "Number()". That is what is wrapped around the variable value.
+        if (cost < 40) {
+          cost = cost + 10;
+//          console.log(cost);
+        } // now we need to be able to display this changeable cost on the page, needing a new paragraph that is pulled into JS and controlled from here depending on the input value provided by a user.
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`;
+      }
+
+//To do this yourself, remember the process for Javascript coding. Come up with the steps, aka algorithm, and then convert those steps into code.
+//Steps needed; When we click the button: If the text is "Subscribe", we change it to "Subscribed": Otherwise, change it back to "Subscribe". Now convert those steps into code.
+//Add an onclick attribute to the button. Get the text inside the button into Javascript to be controlled, by using the document object to grab the innerHTML property of the button.
+
+//this code was in the body, but to make it cleaner, was turned into a function in the script. The function was named "subscribe()" with the following code copy and pasted into the curly brackets. 
+//Then to use it, the function name "subscribe();" was inserted into the button onclick attribute.
+
+      function subscribe () {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+//use "innerText" to get only the text within the element/button, because then you can add spaces around the word 'Subscribe' and tidy the code up without affecting the if statement. The inner HTML reads the whole thing, spaces included.
+
+//the next step is to update the rock paper scissors game, and is in the 09 file.
+    </script>
+  </body>
+</html>

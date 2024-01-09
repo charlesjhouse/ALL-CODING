@@ -24,23 +24,97 @@
       console.log(product);
       */
 
-      const product2 = {
-        name: 'shirt',
-        'delivery-time': '1 day',
-        rating: {
-          stars: 4.5,
-          count: 87
-        },
-        fun: function function1() {
-          console.log('function inside object');
+      // const product2 = {
+      //   name: 'shirt',
+      //   'delivery-time': '1 day',
+      //   rating: {
+      //     stars: 4.5,
+      //     count: 87
+      //   },
+      //   fun: function function1() {
+      //     console.log('function inside object');
+      //   }
+      // };
+      // console.log(product2);
+      // console.log(product2['name']);
+      // console.log(product2['delivery-time']);
+
+      // console.log(product2.rating.count);
+      // product2.fun();
+
+      // console.log(JSON.stringify(product2));
+
+      // const jsonstring = JSON.stringify(product2);
+      // console.log(JSON.parse(jsonstring));
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const object1 = {
+        message: 'hello'
+      };
+      const object2 = object1;
+
+      object1.message = 'Good job!';
+      console.log(object1);
+      console.log(object2);
+
+      // We can't compare objects directly
+
+      // new object, with same value as object1
+      const object3 = {
+        message: 'Good job!'
+      };
+      console.log(object3 === object1);
+      // Console says "false", these objects aren't equal despite having same values inside. This is because objects are references, drawing information from the place they are stored in the computer, not from the literal values inside them. Drawing from different places due to being different references.
+      console.log(object2 === object1);
+      // But object2 has the SAME reference as object1, drawing from the same place in the computer, and therefore reads in the Console as "true".
+      
+      //Shortcuts for objects next
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      };
+      //lets say we want to get the message property out of the object.
+      //"object4.message"
+
+      //now to save it in a variable?
+      //"const message = object4.message;" this is now a not needed due to shortcut below
+
+      //if the value name and property name are the same, there is a shortcut for it
+      const {message, price} = object4;
+      //This is called destructuring. Taking the "message" property out of object4 and saving it in a variable called message
+
+      console.log(message); //now reads "Good job!" in console, because the destructuring shortcut took the property out of the object and saved it to the message variable
+      //we can use destructuring for multiple properties
+      console.log(price); //displays 799 in Console
+
+      //Destructuring is an easier way to take properties out of an object
+
+      //Next shortcut, Shorthand Property
+
+      const object5 = {
+        //message: message //takes whatever is in message variable, and substitutes it into this 
+        message, //can just write once when both property and var name are same. Called Shorthand Property
+        //method: function function1() {
+        //  console.log('method')
+        //}
+        method () { //the brackets create a function just like above
+          console.log('method');
         }
       };
-      console.log(product2);
-      console.log(product2['name']);
-      console.log(product2['delivery-time']);
+      console.log(object5); //says "Good job!" in console
 
-      console.log(product2.rating.count);
-      product2.fun();
+      //Shorthand Method, read back to object5 extension
+      object5.method() //run function by typing object5.method, to access the function, and RUN it by typing ()
+
+      //IN THIS LESSON
+      //1. Objects = group related values together
+      //2. Added score to Rock Paper Scissors
+      //3. Built-in objects, (JSON, localStorage)
+      //4. Object details (null, auto-boxing, references)
+      //5. Shortcuts (destructuring, shorthand property, shorthand method)
     </script>
   </body>
 </html>

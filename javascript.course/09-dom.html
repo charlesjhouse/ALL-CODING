@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      //DOM is a document object.
+
+      //document.body.innerHTML = 'hello'
+
+      //"document" is a built in object. the "." is a dot notation, meaning we're accessing a property of the document object; called "body". Since the body is also an object, we can use the dot notation again to access the property of the body object called "innerHTML". Finally we use an "=" sign to change the innerHTML to "hello".
+      //Something special about it is that chaging the property innerHTML changes the webpage. The documetn object and webpage are linked together.
+
+      //ANOTHER EXAMPLE
+
+      //                 document.title = ('Good job!');             can change the title of the webpage. So the docuent object represents the webpage, models the webpage, therefore it is called the Document Object MODEL (DOM).
+
+      //SYNTAX RULES
+
+      //It is a built in object, works the same. Contains properties that can be accessed with dot notation, BUT is linked to the webpage.
+
+      //the ".title" property can be used to get the tab title, but also change the tab title. e.g. document.title = "Changed"
+
+      //There is also ".body". Very special property, literally gets the body HTML element and PUTS it inside our JavaScript. If you use "console.log(document.body)", the HTML body itself will show up in the console, everything in the <body>, including the <script>. This means WE CAN HAVE HTML ELEMENTS INSIDE JAVASCRIPT. DOM combines them together, allowing JS control of the webpage. What can we do with this .body?
+      
+      //When an HTML element is put inside JS like this, it is CONVERTED to a JS OBJECT.
+      //e.g. console.log(typeof document.body) will tell us "object". Therefore it has properties and methods we can use.
+      //e.g. document.body has the property .innerHTML we can use. .innerHTML property controls all the HTML inside the body. To confirm that, we can just console.log(document.body.innerHTML); which gives us all the HTML inside the body element.
+      //So if we use document.body.innerHTML = 'Changed'; it will replace everything on the page with just the word/string 'Changed'. If you look at the Elements tba of Inspect, you'll see none of the previous HTML, just the new string 'Changed' that replaced it.
+
+      //Text isn't the only thing we can change the HTML to with .innerHTML. We can also use HTML code. So instead of text we could write: document.body.innerHTML = '<button>Good job!</button>''; thus adding a button instead of text.
+      //That's the difference between .body and .innerHTML. we use .body to GET to .innerHTML, so that we can use actual HTML code within JS and control the page.
+
+      //Now to learn a METHOD of the document object. A METHOD IS A FUNCTION SAVED INSIDE AN OBJECT.
+
+      //if document.body lets us put the whole body inside JS, then this new one, "document.querySelector()" lets us get ANY ELEMENT from the page and put it inside JS.
+
+      //if we use document.querySelector('button'), then it will get the first button element from the page and put it inside our JS. To confirm that si true, we can console.log it.
+
+      //remember that when an HTML element is inside JS, it becomes a JS Object. Therefore, document.querySelector('button') ALSO has properties and methods we can use, since, as the console showed us, it IS the HTML. And EVERY HTML ELEMENT has a property called innerHTML, letting us use that property to control it from here in JS.
+      //e.g. if we expand on the example console.log(document.querySelector('button') by adding .innerHTML); then the console will give us the HTML within the button, that being the text alone. So if we change that like the example below, then we'll change the HTML within it, just the text.
+      //The example is on multiple lines to show that it can be done that way. You can tidy up the presentation of the code by splitting dot notations across lines.
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+        //to access a specific button, just use the class attribute as with HTML and CSS practices. Instead of just querySelector('button'), we can use the class ('.js-button')
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement); //if we use specifically ".js-" before the class name, we can always know when our classes are applied and used in JS and NOT CSS. Keep it tidy for yourself.
+
+      //the reason it is a variable there is because the html being inside JS makes it an object, and an object is a value. Therefore, it can be applied as a variable value. If we use the variable name with Element on the end, we can make clear that it is an HTML element within JS at a glance.
+
+
+      
+      // console.log(document.title);
+      // document.title = 'Changed';
+
+      // console.log(document.body);
+      // console.log(typeof document.body);
+
+      // console.log(document.body.innerHTML);
+      // document.body.innerHTML = '<button>Good job!</button>';
+
+
+      // document.body.innerHTML = 'hello';
+      // document.title = 'Good job!';
+    </script>
+  </body>
+</html>

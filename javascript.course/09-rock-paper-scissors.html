@@ -17,11 +17,18 @@
       playGame('scissors')
     ">Scissors</button>
 
+    <p class="js-result"></p>
+
+    <p class="js-moves"></p>
+
+    <p class = "js-score"></p>
+    <!-- because this paragraph is a BLOCK element, it would take up the entire line and therefore pushes the Reset Score button down below it, instead of alongside everything -->
     <button onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
+      updateScoreElement();
     ">Reset Score</button>
 
 
@@ -32,6 +39,10 @@
         losses: 0,
         ties: 0
       };
+
+      //calling the new score element into JS to be controlled, because we want it to change depending on the result.
+      //we made the score creation process lower down earlier, so now we copy and paste it into the "innerHTML ="
+      updateScoreElement(); // this puts the score we used have in a popup, inside this element/paragraph.
 
       /*
       if (!score) {
@@ -86,9 +97,24 @@
         }
 
         localStorage.setItem('score', JSON.stringify(score));
+        //the score gets updated in localStorage right now, but doesn't update on the page yet in real time by itself
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses ${score.losses}, Ties: ${score.ties}`);
+        updateScoreElement(); 
+
+        // document.querySelector('.js-score')
+        //   .innerHTML = `Wins: ${score.wins}, Losses ${score.losses}, Ties: ${score.ties}`;
+
+        //because this was a cloned code from higher in the code, it's a good situation to use a function instead of copying. everywhere it says updateScoreElement(), it used to say that whole code above this
+
+        document.querySelector('.js-result').
+        innerHTML = result;
+
+        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+      }
+
+      function updateScoreElement () {
+        document.querySelector('.js-score')
+          .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
 
       function pickComputerMove () {

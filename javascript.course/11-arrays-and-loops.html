@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+
+    <script>
+      /*
+      const myArray = [10, 20, 30]; //the array is what's inside the square brackets. Since it is a value, it can be saved in a variable and used as such.
+      console.log(myArray); //this shows [10, 20, 30] in the console
+
+      console.log(myArray[1]); //this shows 10, as adding square brackets to the end of it takes a specific part of the array out, each number representing the placement of it in the array. So typing myArray[0] means the first value, [1] means the second and so on. Therefore since this says [1], it returns 20.
+      myArray[0] = 99; //we can also take the specific value out and change it to something else like this.
+      console.log(myArray); //now that I changed [0] to 99, the console reads [99, 20, 30].
+
+      //an array can be written over multiple lines by pressing Enter after each comma.
+
+      //[1] is known as the index. Because it is the position in the array we are looking to get. Index 0, Index 1, so on. It starts at 0, and is called a 0-indexed array.
+
+      [1, 'hello', true, { name: 'socks' }, [1, 2]] //an array can hold any value, like this line. Number, string, boolean, object. But an array is also a value itself, so an array can be within an array. When you check what typeof it is, it's weird. 
+
+      console.log(typeof [1,2]); //it says it's an object, just a special type.
+
+      //to check if something specifically is an array, I can write "Array.isArray([insert array here])" and console.log it like this.
+      console.log(Array.isArray([1, 2]));
+
+      //Array is an OBJECT and therefore has properties. 
+
+      console.log(myArray.length); //the property ".length" tells us how long the array is, this time returning 3, as it has 3 values.
+
+      //As and object, it has methods too. I use one called ".push()" next to add a value to the end of an array.
+      myArray.push(100);
+      console.log(myArray); //now the array has 4 values, the last being 100.
+
+      //.splice() removes a value
+
+      myArray.splice(0, 1); //splice requires two numbers. The INDEX we want to remove, and the number of values we want to remove. If we write 1, it removes 1 number starting at index 0, if we write 2, it removes 2 numbers starting at index 0.
+      console.log(myArray);
+      */
+      /*
+      //LOOP
+      let i = 1
+
+      //the while loop brackets show that if i is lower than or equal to 5, keep looping. keep running again and again, and showing that in the console. but by changing the let variable i within the loop to be itself + 1, each loop will add 1 to i until it reaches 5, at which point the limit is enforced from the loop and it no longer loops. 
+      while(i <= 5) {
+        console.log(i);
+        i++;
+      } //so it's called a "while loop" because WHILE the condition is true, it will loop over and over.
+
+      //SYNTAX RULES
+      //have to type "while" and then "() {}". the contents of the brackets are the "loop condition". the code in the "{}" is the "loop body". the variable "i" at the top is called the "loop variable". by increasing the loop variable with each loop, it is called an "increment step", which makes sure that it ends at some point.
+      //each loop is called an "iteration".
+      //loops are also a scope, so vars made inside it are only contained in it.
+
+      //FOR LOOP
+      //in the brackets we will write 3 pieces of information. 1: the loop variable. 2: the loop condition. 3: the increment step. Then in the curly brackets, we write the code we want to loop over and over.
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      } //SO intead of writing the loop variable, loop condition and increment step separately in the while loop, this for loop can be used to write it several lines shorter and group it up. This does the same thing, counts to 5.
+
+      //If we're doing a standard loop with those three steps, we should use a "for" loop. But id it's nonstandard, we use while. What is that?
+      // Example, what if we wanted to make a loop that generates random numbers until one that is at least 0.5?
+      //lets make a variable to store the random number in.
+      let randomNumber = 0;
+
+      while (randomNumber < 0.5) {
+        randomNumber = Math.random();
+      }
+
+      console.log(randomNumber);
+      //THAT is a nonstandard loop.
+      */
+      //PRACTICAL STUFF
+      //looping through an array = go through each value of an array one by one and do something with each value
+/*
+      const todoList = [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ]; //now we will run a loop from 0 to the last index (first position to last position in array)
+      //inside the brackets this time, we will CREATE the loop variable; loop condition; increment step.
+      for (let i = 0; i < todoList.length; i++) {//shortcut, shorten variable "index" to "i"
+        //we can acces the value at an index too
+        //todoList[index] //so whenever it loops, this will take whatever the index variable it is on that iteration and access that index in the array. now lets save in a variable to be used.
+        const value = todoList[i];
+        console.log(value);
+      }
+*/
+
+      //how would we calculate the total of an array of numbers? ACCUMULATOR PATTERN
+      const nums = [1, 1, 3]; //how calculate?
+      //first make a variable to store the result.
+      let total = 0; //loop through array and update result.
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        total += num;
+      }
+      console.log(total);
+
+      const numsDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numsDoubled.push(num * 2);
+      }
+      console.log(numsDoubled);
+    </script>
+  </body>
+</html>

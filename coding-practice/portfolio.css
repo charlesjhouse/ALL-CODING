@@ -26,8 +26,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-left:10%;
-  margin-right:10%;
 }
 
 .xenoblade-container {
@@ -92,16 +90,31 @@ body {
 }
 
 .xenoblade-content {
+  position: absolute;
+  right: 0;
   float: right;
   margin: 20px;
   text-align: right;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: margin 0.3s ease, opacity 0.3s ease;
-  max-width: 400px;
+  max-width: 40%; 
+  /* lowered width in general */
   opacity: 0;
 }
 
 .xenoblade-container:hover .xenoblade-content {
   margin-right: 60px;
   opacity: 1;
+}
+/* added 2 new media queries to lower text size and distance from right side of container as the screen shrinks */
+@media (max-width: 920px) {
+  .xenoblade-content {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 608px) {
+  .xenoblade-container:hover .xenoblade-content {
+    margin-right: 10px;
+  }
 }
